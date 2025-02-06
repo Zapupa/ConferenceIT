@@ -10,6 +10,15 @@ class Report extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'fullname',
+        'path_img',
+        'theme',
+        'status',
+        'section_id',
+        'user_id'
+    ];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
