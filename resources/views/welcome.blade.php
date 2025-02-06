@@ -861,55 +861,53 @@
                 Среди них будут известные эксперты, руководители и представители федеральных и региональных органов власти, ведущих российских ИТ-компаний, образовательных и научных центров, крупнейших промышленных предприятий, компаний в сфере телекоммуникаций, энергетики, ВПК, финансов, машиностроения и других отраслей.
 
             </p>
-            <div class="relative overflow-x-auto ">
-                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                        <tr>
-                            <th scope="col" class="px-6 py-3">
-                                Фото
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Имя
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Тема выступления
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Секция
-                            </th>
-                        </tr>
+            <div class="p-6 text-black overflow-x-auto">
+                <table class="w-full text-sm text-left rtl:text-right text-black dark:text-black ">
+                <thead class="text-xs text-white uppercase bg-blue-700">
+                    <tr>
+                        <th scope="col" class="px-6 py-3">
+                            Фото
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Имя
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Тема выступления
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Секция
+                        </th>
+                    </tr>
 
-                    </thead>
-                    <tbody>
-                        @foreach ($reports as $report)
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                @isset($report->path_img)
-                                    <img src="/images/{{$report->path_img}}" class="contact-block__img" alt="{{$report->path_img}}">
-                                @endisset
-                            </th>
-                            <td class="px-6 py-4">
-                                {{$report -> fullname}}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{$report -> theme}}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{$report -> section -> title}}
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
+                </thead>
+                <tbody>
+                    @foreach ($reports as $report)
+                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            @isset($report->path_img)
+                            <img src="/images/{{$report->path_img}}" class="contact-block_img max-w-3xs max-h-3xs" alt="{{$report->path_img}}">
+                            @endisset
+                        </th>
+                        <td class="px-6 py-4 p-5">
+                            {{$report -> fullname}}
+                        </td>
+                        <td class="px-6 py-4 p-5">
+                            {{$report -> theme}}
+                        </td>
+                        <td class="px-6 py-4 ">
+                            {{$report -> section -> title}}
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+    </div>
+            
 
 
 
-            <div class="flex justify-center mt-16 px-0 sm:items-center sm:justify-between">
-                <div class="text-center text-sm sm:text-left">
-                    &nbsp;
-                </div>
-            </div>
+
+
         </div>
     </div>
 </body>
